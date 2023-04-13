@@ -1,14 +1,11 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import File04Icon from '@untitled-ui/icons-react/build/esm/File04';
-import { Box, Button, Drawer, Stack, SvgIcon, Typography } from '@mui/material';
+import { Box, Drawer, Stack, } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Logo } from 'src/components/logo';
 import { RouterLink } from 'src/components/router-link';
 import { Scrollbar } from 'src/components/scrollbar';
 import { usePathname } from 'src/hooks/use-pathname';
-import { paths } from 'src/paths';
-import { TenantSwitch } from '../tenant-switch';
 import { SideNavSection } from './side-nav-section';
 
 const SIDE_NAV_WIDTH = 280;
@@ -183,7 +180,7 @@ export const SideNav = (props) => {
           >
             <Box
               component={RouterLink}
-              href={paths.index}
+              href={''}
               sx={{
                 borderColor: 'var(--nav-logo-border)',
                 borderRadius: 1,
@@ -197,7 +194,6 @@ export const SideNav = (props) => {
             >
               <Logo />
             </Box>
-            <TenantSwitch sx={{ flexGrow: 1 }} />
           </Stack>
           <Stack
             component="nav"
@@ -216,33 +212,7 @@ export const SideNav = (props) => {
               />
             ))}
           </Stack>
-          <Box sx={{ p: 3 }}>
-            <Typography variant="subtitle1">
-              Need help?
-            </Typography>
-            <Typography
-              color="neutral.400"
-              sx={{ mb: 2 }}
-              variant="body2"
-            >
-              Please check our docs.
-            </Typography>
-            <Button
-              component="a"
-              fullWidth
-              href={paths.docs}
-              startIcon={(
-                <SvgIcon>
-                  <File04Icon />
-                </SvgIcon>
-              )}
-              target="_blank"
-              variant="contained"
-            >
-              Documentation
-            </Button>
-          </Box>
-        </Stack>
+         </Stack>
       </Scrollbar>
     </Drawer>
   );
