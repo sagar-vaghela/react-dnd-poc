@@ -8,10 +8,6 @@ import { RouterLink } from 'src/components/router-link';
 import { Scrollbar } from 'src/components/scrollbar';
 import { usePathname } from 'src/hooks/use-pathname';
 import { paths } from 'src/paths';
-import { AccountButton } from '../account-button';
-import { ContactsButton } from '../contacts-button';
-import { LanguageSwitch } from '../language-switch';
-import { NotificationsButton } from '../notifications-button';
 import { TenantSwitch } from '../tenant-switch';
 import { TopNavSection } from './top-nav-section';
 
@@ -206,16 +202,6 @@ export const TopNav = (props) => {
             <Logo />
           </Box>
           <TenantSwitch />
-        </Stack>
-        <Stack
-          alignItems="center"
-          direction="row"
-          spacing={2}
-        >
-          <LanguageSwitch />
-          <NotificationsButton />
-          <ContactsButton />
-          <AccountButton />
         </Stack>
       </Stack>
       {mdUp && (
